@@ -1,0 +1,30 @@
+# permite a comunicação entre processos 
+
+import os, time, sys
+
+# criando o camilho para o arquivo  pipefifo
+fifonome = os.path.join(os.getcwd(), 'tmp', 'pipefifo') 
+
+def filho():
+    # ele executa primeiro 
+    pipeout = os.open(fifonome, os.O_WRONLY) # O_WRONLY so pode ser escrito 
+    zzz = 0
+    while True:
+        time.sleep(zzz)
+        msg = ('Spam %03d\n' % zzz).encode()
+        os.write(pipeout, msg) # escreve no arquivo 
+        zzz = (zzz+1) % 5
+ 
+def pai():
+    pipein = open(fifonome) # abre o arquivo 
+    while True:
+        linha = pipein.readline() # fica lendo as linha contidas no pipein
+        print('Pai %d recebeu "%s" as %s' % (os.getpid(), linha, time.time()))
+ 
+if __name__ == '__main__':
+    if not os.path.exists(fifonome):  # se nao existe o arquivo 
+        os.mkfifo(fifonome) # cria o arquivo no camino e nome especificado 
+    if 2 == 1: # se passar um argumento ele executa  o pai  
+        pai()
+    else:
+        filho()

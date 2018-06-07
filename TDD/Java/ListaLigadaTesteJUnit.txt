@@ -1,0 +1,153 @@
+import org.junit.Test;
+
+public class ListaLigadaTesteJUnit {
+
+	@Test
+	public void testMostrar()
+	{
+		System.out.println("----------------testMostrar");
+	    ListaLigada lista = new ListaLigada();
+	    
+	    lista.adicionaNoComeco("Rafael");
+	    lista.adicionaNoComeco("Paulo");
+	    
+	    lista.mostrar();
+	}
+	
+	@Test
+	public void testAdicionaNoComeco()
+	{
+		 	System.out.println("----------------testeAdicionaNoComeco");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adicionaNoComeco("Rafael");
+		    lista.adicionaNoComeco("Paulo");
+		    
+		    lista.mostrar();
+	}
+	
+	@Test
+	public void testAdicionarNoFinal()
+	{
+		System.out.println("----------------testeAdicionarNoFinal");
+		ListaLigada lista = new ListaLigada();
+
+	    lista.adicionaNoFinal("Maria");
+	    lista.adicionaNoFinal("Carol");
+	    
+	    lista.mostrar();
+	}
+	
+	@Test
+	public void testAdicionar()
+	{
+		System.out.println("----------------testeAdicionar");
+		ListaLigada lista = new ListaLigada();
+
+	    lista.adiciona("Maria");
+	    lista.adiciona("Carol");
+	    
+	    lista.mostrar();
+	}
+	
+	@Test
+	public void testAdicionaPorPosicao()
+	{
+		System.out.println("----------------testeAdicionaPorPosicao");
+		ListaLigada lista = new ListaLigada();
+		
+		lista.adiciona("cachorro");
+		lista.adiciona(0, "gato");
+		lista.adiciona(1, "pato");
+		    
+		lista.mostrar();
+	}
+	
+	@Test
+	public void testPegaPorPosicao() 
+	{
+			System.out.println("----------------testePegaPorPosicao");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    
+		    System.out.println(lista.pegaCelula(0).getElemento());
+		    System.out.println(lista.pegaCelula(1).getElemento());
+	}
+	
+	@Test
+	public void testRemovePorPosicao() 
+	{
+			System.out.println("----------------testeRemovePorPosicao");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    lista.adiciona("Camila");
+		    
+		    lista.removePosicao(1);
+		    
+		    lista.mostrar();
+	}
+	
+	@Test
+	public void TestRemoveDoComeco() 
+	{
+			System.out.println("----------------TesteRemoveDoComeco");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    lista.adiciona("Camila");
+		    
+		    lista.removeDoComeco();
+		    
+		    lista.mostrar();
+	}
+	
+	@Test
+	public void TestRemoveDoFim() 
+	{
+			System.out.println("----------------TesteRemoveDoFim");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    
+		    lista.removeDoFim();
+		    
+		    lista.mostrar();
+	}
+	
+	@Test
+	public void testTamanho() 
+	{
+			System.out.println("----------------testeTamanho");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    
+		    System.out.println(lista.tamanho());
+		    
+		    lista.adiciona("Camila");
+		    
+		    System.out.println(lista.tamanho());
+	}
+	
+	@Test
+	public void testContemElemento() 
+	{
+			System.out.println("----------------testeContemElemento");
+		    ListaLigada lista = new ListaLigada();
+		    
+		    lista.adiciona("Rafael");
+		    lista.adiciona("Paulo");
+		    
+		    System.out.println(lista.contem("Rafael"));
+		    System.out.println(lista.contem("Camila"));
+	}
+	
+
+}

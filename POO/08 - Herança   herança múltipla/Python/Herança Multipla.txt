@@ -1,0 +1,25 @@
+// Para herdar mais de uma classe basta colocar a classe entre ( ) : class Teceira(Primeira, Segunda):
+// Super() não funciona se ouver metodos com o mesmo nome e assinatura   
+// Para evitar problemas com o Super() use 'Primeira.'  'Segunda.'
+
+class Primeira(object):
+
+    def __init__(self):
+       self.p1 = 1
+       print('primeira')
+
+
+class Segunda(object):   
+    
+    def __init__(self):
+       self.p2 = 2;
+       print('segunda')
+
+class Teceira(Primeira, Segunda):   
+    
+    def __init__(self):
+       Primeira.__init__(self)   
+       Segunda.__init__(self)
+
+a = Pessoa(a, 'Leonardo', 22)
+b = PessoaFisica('122.333.332-1', 'paulo', 19)

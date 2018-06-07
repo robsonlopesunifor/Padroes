@@ -1,0 +1,18 @@
+
+
+import domain   							# Importação simples
+from domain import *  							# Importação todos 
+from domain import DataTable, Column   					# Importar alguns 
+from domain import (DataTable, Column, PrimaryKey, Relationship)  	# Importar alguns 
+from domain import DataTable as Table 					# Da um novo nome 
+
+# Qaundo voce usar o comando (from copa_transparente import DataTable) ele tara executando o (copa_transparente.__init__) 
+
+# Sempre que um módulo é importado, a variável __all__ é procurada dentro dele. 
+# Caso exista, ela que definirá quais são os nomes exportados pelo módulo. 
+# Caso não exista, todas as definições encontradas no módulo que não começam com _ serão exportadas.
+
+from domain import *
+__all__ = ['DataTable', 'Column']  # acesso a todas as classes definidas em domain, e optamos por exportar apenas DataTable, Column.
+
+

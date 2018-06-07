@@ -1,0 +1,14 @@
+
+// Nao existe sobrecarga, que e escrever o mesmo metodo com assinatura diferente
+// mas voce pode fazer isso abaixo. 
+
+class Pessoa{
+
+  constructor(obj: any) {
+     if (obj instanceof Array) {
+         //faz algo
+     } else {
+         //faz outra coisa
+     }
+ }
+}

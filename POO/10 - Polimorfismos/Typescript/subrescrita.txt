@@ -1,0 +1,28 @@
+
+// classes e interface
+
+class Pessoa{
+
+  constructor(){}
+
+  public trabalho(){
+    console.log('medico')
+  }
+}
+
+
+class PessoaFisica extends Pessoa{
+
+    constructor(){
+      super();
+    }
+
+    // sobreescrita
+    public trabalho(){
+      console.log('Enguenheiro')
+    }
+
+}
+
+let pessoaFisica = new PessoaFisica()
+pessoaFisica.trabalho()

@@ -1,0 +1,52 @@
+Usamos a palavra chave abstract para impedir que ela possa ser instanciada. 
+O abstract serve para o polimorfismo e herança dos atributos e métodos.
+____________________________________________
+package Polimorfismo;
+
+abstract class Conta {
+	
+	private double saldo;
+	
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public abstract void imprimeExtrato();
+
+}
+_________________________________________________________________________
+package Polimorfismo;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class ContaPoupanca extends Conta {
+
+	@Override
+	public void imprimeExtrato() {
+		System.out.println("### Extrato da Conta ###");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
+		Date date = new Date();
+		
+		System.out.println("Saldo: "+this.getSaldo());
+		System.out.println("Data: "+sdf.format(date));
+		
+	}
+}
+__________________________________________________________________________
+package Polimorfismo;
+
+public class TestaConta {
+	public static void main(String[] args) {
+		Conta cp = new ContaPoupanca();
+		cp.setSaldo(2121);
+		cp.imprimeExtrato();
+
+	}
+}
+___________________________________________________________________________

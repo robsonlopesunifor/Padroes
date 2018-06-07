@@ -1,0 +1,21 @@
+public class Sala{
+
+    	int numero;
+
+}
+
+public class Participante{
+
+    	String nome;
+
+}
+
+public class Reuniao{
+    
+	Sala escritorio;
+	Participante pessoa1;
+	Participante pessoa2;
+	Participante pessoa3;
+	Participante pessoa4;
+
+}

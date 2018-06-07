@@ -1,0 +1,52 @@
+
+public class GenericLinkedList<T> implements GenericListInterface<T> {
+	private int count;
+	private GenericNode<T> first;
+
+	public GenericLinkedList() {
+		super ();
+		this.count = 0;
+		this.first = null;
+	}
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public GenericNode<T> getFirst() {
+		return first;
+	}
+
+	public void setFirst ( GenericNode<T> first ) {
+		this.first = first;
+	}
+
+	@Override
+	public void insert ( T data ) {
+		GenericNode<T> newNode = new GenericNode<T> ( data, this.first );
+		this.first = newNode;
+		this.count++;
+	}
+
+	@Override
+	public void show() throws EmptyListException {
+		GenericNode<T> aux = this.first;
+		if ( size () == 0 )
+			throw new EmptyListException ();
+		
+		do {
+			System.out.println ( aux.getData() );
+			aux = aux.getNext ();
+		} while ( aux != null );
+	}
+
+	@Override
+	public int size() {
+		return count;
+	}
+
+}

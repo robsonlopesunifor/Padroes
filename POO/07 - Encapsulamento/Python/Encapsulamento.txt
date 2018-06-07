@@ -1,0 +1,12 @@
+// No Python so existe dois tipos de encapsulamento o publico e o privado, 
+// que e so acresentar __ antes do atributo ou do metodo. 
+
+class Encapsulamento:
+	__atributoPrivado = 'valor privado' 
+	atributoPublico = 'valor publico'
+	def __metodoPrivado(self):
+		print(self.__atributoPrivado) // so pode ser chamado por um metodo publico 
+	def metodoPublico(self):
+		print(self.atributoPublico)
+		self.__metodoPrivado()         // so pode ser chamado dentro da classe 
+

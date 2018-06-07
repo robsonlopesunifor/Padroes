@@ -1,0 +1,15 @@
+Start.php_________________________________________________________
+
+>>> Cachorro = Cachorro()
+
+Cachorro.php____________________________________________________
+
+>>> class Cachorro:
+
+	nome_cientifico = 'canino' # sem o self: cria um lugar nemoria que qualquer classe pode acessar 
+
+	def __init__(self): // metodo construtor e argumento de auto referencia obrigatorio
+		self.nome = 'Betovem' # com o self: so pode ser acessado por essa classe 
+		print(self.nome)
+
+________________________________________________________________

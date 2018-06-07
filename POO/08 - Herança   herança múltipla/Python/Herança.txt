@@ -1,0 +1,32 @@
+// Para herdar uma classe basta colocar a classe entre ( ) : class PessoaFisica(Pessoa):
+// O comando Super() sever como polimorfismo sobrescrevento o metodo 
+
+class Pessoa:
+
+    def __init__(self, nome ='', idade=0):
+       self.__nome = nome
+       self.__idade = idade
+
+    def getIdade(self):
+       return self.__idade
+
+    def getNome(self):
+       return self.__nome
+
+class PessoaFisica(Pessoa):   // Herdando a classe Pessoa
+    
+    def __init__(self, CPF, nome='', idade=0):
+       Pessoa.__init__(self, nome, idade)
+       self.CPF = CPF
+
+
+a = Pessoa(a, 'Leonardo', 22)
+b = PessoaFisica('122.333.332-1', 'paulo', 19)
+
+
+print(a.getNome())   
+ Leonardo
+print(a.getIdade())  
+ 22
+print(b.getNome())    // b consegui herdar da classe Pessoa, mas so os medodos e atributos publicos
+ paulo

@@ -1,0 +1,16 @@
+
+public interface ListaLigadaInterface 
+{
+	public void mostrar();
+	public void adicionaNoComeco(Object elemento);
+	public void adicionaNoFinal(Object elemento);
+	public void adiciona(Object elemento);
+	public void adiciona(int posicao, Object elemento);
+	public void removeDoComeco();
+	public void removeDoFim();
+	public void removePosicao(int posicao);
+	public Object pegaCelula(int posicao);
+	public Object pegaElemento(int posicao);
+	public int tamanho();
+	public boolean contem(Object elemento);
+}

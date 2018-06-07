@@ -1,0 +1,9 @@
+Não existe no Python
+
+#Sobrecarga e quando a does metodos com o mesmo nome mas con assinatura diferenre na mesma classe 
+
+	def lati(self):
+		pass
+
+	def lati(self,fala)
+		latido = fala

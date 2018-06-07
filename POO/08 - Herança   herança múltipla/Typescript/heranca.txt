@@ -1,0 +1,34 @@
+
+// classes e interface
+
+class Pessoa{
+
+  private nome: string // tambem vai no parametro
+  private idade: number
+
+  constructor (nome: string, idade = 0){
+    this.nome = nome
+    this.idade = idade
+  }
+
+  public getIdade(){
+      return this.idade
+  }
+
+  public getNome(){
+    return this.nome
+  }
+}
+
+
+class PessoaFisica extends Pessoa{
+
+    constructor(){
+        super('String gualquer')
+    }
+
+}
+
+
+let pessoaFisica = new PessoaFisica()
+console.log(pessoaFisica.getNome())

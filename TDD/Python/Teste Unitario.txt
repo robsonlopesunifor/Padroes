@@ -1,0 +1,64 @@
+﻿import decimal
+import unittest
+
+>>> class Column:
+    def __init__(self, name, kind, description=""):
+        self._name = name
+        self._kind = kind
+        self._description = description
+        
+    @staticmethod
+    def validate(kind, data):
+        if kind == 'bigint':
+            if isinstance(data, int):
+                return True
+            return False
+        elif kind == 'varchar':
+            if isinstance(data, str):
+                return True
+            return False
+        elif kind == 'numeric':
+            try:
+                val = decimal.Decimal(data)
+            except:
+                return False
+            return True
+
+#   pressisa do prefixo test_
+#   A API de teste fica na instacia de - self -
+#   setUp setUp executado sempre no inicio de todo metodo  - OPCIONAL  
+#   tearDown executado sempre no final de todo metodo  - OPCIONAL  
+
+>>> class ColumnTest(unittest.TestCase):
+    def setUp(self):  
+        print('Executado no inicio de todo metodo') 
+
+    def test_validate_bigint(self):     
+        self.assertTrue(Column.validate('bigint', 100))
+        self.assertTrue(not Column.validate('bigint', 10.1))
+        self.assertTrue(not Column.validate('bigint', 'Texto'))
+        
+    def test_validate_numeric(self):
+        self.assertTrue(Column.validate('numeric', 10.1))
+        self.assertTrue(Column.validate('numeric', 100))
+        self.assertTrue(not Column.validate('numeric', 'Texto'))
+        
+    def test_validate_varchar(self):
+        self.assertTrue(Column.validate('varchar', 'Texto'))
+        self.assertTrue(not Column.validate('varchar', 100))
+        self.assertTrue(not Column.validate('varchar', 10.1))
+
+    def tearDown(self):   
+        print("Executado sempre no final de todo metodo")
+
+# tem que ficar no final para executar os testes 
+>>> if __name__ == "__main__":   
+    unittest.main()
+
+
+
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.027s
+
+OK

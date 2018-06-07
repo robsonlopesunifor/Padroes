@@ -1,0 +1,40 @@
+
+
+___________________________________________________________________________
+
+package Classe;
+
+public class Mae 
+{
+	double atributoDaClasseMae;
+		  
+	public double metodoHerdado() {
+		return this.atributoDaClasseMae + 300;
+	}
+}
+
+___________________________________________________________________________
+
+package Classe;
+
+class Filha extends Mae  // herda a classe Mae
+{
+	  int atriutoDaClasseMae;
+	  
+	  public void setaAtriutoDoubleDaClasseMae(double valorQualquer) 
+	  {
+		  this.atributoDaClasseMae =  valorQualquer;
+	  }
+	  
+	  public void mostrarAtriutoDoubleDaClasseMae() 
+	  {
+		  System.out.println(this.atributoDaClasseMae);
+	  }
+	  
+	  @Override  // sobreescreve o metodo
+	  public double metodoHerdado() {
+		  return super.metodoHerdado() + 1000; //chama o metodo da classe mae
+	  }
+}
+___________________________________________________________________________
+

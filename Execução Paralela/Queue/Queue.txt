@@ -1,0 +1,47 @@
+numconsumidores = 2
+numprodutores = 4
+nummensagens = 4
+
+import threading, queue, time   # Importa os modulos  
+
+Fila = queue.Queue()    # cria a fila 
+
+def produtor(idnum):    
+    for msgnum in range(nummensagens):
+        time.sleep(idnum)
+        Fila.put('[produtor id=%d, cont=%d]' % (idnum, msgnum)) #   adiciona na fila 
+
+def consumidor(idnum):
+    while True:
+        time.sleep(0.1)
+        try:
+            data = Fila.get(block=False) # retira da fila 
+        except queue.Empty:
+            pass
+        else:
+            print('consumidor',idnum,'recebeu =>',data)
+
+if __name__ == '__main__':
+    
+    for i in range(numconsumidores):
+        thread = threading.Thread(target=consumidor, args=(i,))
+        # se o daemon for false ele não travaria o loop
+        # Com true ira permitir que o programa seja fechado quando o programa principal acaba 
+        # Assim não importa o quanto o consumidor seja executado
+        # quando os produtores terminarem as thred consumidor finaliza
+        # quando voce tem uma thread infinita voce precisa cetar o daeamon
+        # como true para finalizar quando terminar 
+        thread.daemon = True 
+        thread.start()
+        
+    espera = []
+        
+    for i in range(numprodutores):
+        thread = threading.Thread(target=produtor, args=(i,))
+        espera.append(thread)
+        thread.start()
+
+    # ele que vai finalizar as thread do produtor
+    # quando todos forao finalizado o programa se encerra 
+    for thread in espera: thread.join()
+    print('Sai da thread principal.')

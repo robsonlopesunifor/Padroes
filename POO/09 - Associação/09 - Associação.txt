@@ -1,0 +1,16 @@
+public class Aluno{
+
+    String nome;
+    Professor professor;
+
+}
+
+public class Professor{
+
+    String nome;
+    Aluno aluno1;
+    Aluno aluno2;
+    Aluno aluno3;
+    Aluno aluno4;
+
+}

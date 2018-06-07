@@ -1,0 +1,27 @@
+
+// interface
+interface Univercitario{
+
+    faculdade: string
+    matricula: number
+
+    estudar()
+
+}
+
+//  para implementar uma interface use implements
+class Estudante implements Univercitario{
+
+  faculdade: string;
+  matricula: number;
+
+  estudar() {
+    throw new Error("Method not implemented.");
+  }
+  constructor(){}
+}
+
+// interface podem extender outra interfaces
+interface Adolescente extends Univercitario{
+    nota: number
+}

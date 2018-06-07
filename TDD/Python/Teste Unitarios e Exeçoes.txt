@@ -1,0 +1,42 @@
+﻿# se uma exeçao for disparada no setUp o tearDown nao sera executado 
+	# para resolver isso devesse adicionar uma ação de limpeza 
+# addCleanup acao de limpeza, sempre ira ser ezecultado mesmo apos o erro sem corregido 
+
+#----------------------------------------------------------------------------------
+import unittest
+
+class DataTableTest(unittest.TestCase):
+    def setUp(self):    
+        self.addCleanup(self.my_cleanup, ('cleanup executado')) # ação de limpeza
+        self.out_file = open() # vai dar erro pos esta incompleto 
+        
+    def my_cleanup(self, msg): # chamado pelo my_cleanup 
+        print(msg)
+        
+    def test_add_column(self): # seus testes 
+        pass
+    
+    def tearDown(self):   
+        print("Nunca executado")
+
+#----------------------------------------------------------------------------------
+
+#Rode na linha de comando e veja o resultado:
+    
+$ python -m unittest -v 08_10_cleanup.py
+
+cleanup executado
+E
+=================================================================
+ERROR: test_add_column (08_10_cleanup.DataTableTest)
+-----------------------------------------------------------------
+Traceback (most recent call last):
+    File
+    "/Users/felipecruz/Projects/livros/exemplos/08_10_cleanup.py",
+    line 6, in setUp
+    self.out_file = open()
+TypeError: Required argument 'file' (pos 1) not found
+-----------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

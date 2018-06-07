@@ -1,0 +1,6 @@
+
+public interface GenericListInterface<T> {
+	public void insert ( T newNode );
+	public void show () throws EmptyListException;
+	public int size ();
+}

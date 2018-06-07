@@ -1,0 +1,29 @@
+Usamos a palavra chave abstract para impedir que ela possa ser instanciada. 
+abstracao e quando abstrairmos um metodo que e obrigatorio sua implementaçao no polimorfismo 
+_____________________________________________________________________
+>>> from abc import ABC, abstractmethod 
+
+>>> class Conta(ABC):
+	def __int__(self,saldo):
+		self.saldo
+	def getSaldo(self):
+		return self.saldo
+	def setSaldo(self,saldo):
+		self.saldo = saldo
+	@abstractmethod	
+	def imprimeExtrato(self):
+		pass
+
+_____________________________________________________________________	
+>>> class ContaPoupanca(Conta):
+	def imprimeExtrato(self):
+		print('Quantidade de saldo disponivel: %f'%(self.saldo))
+
+______________________________________________________________________		
+>>> cp = ContaPoupanca()
+>>> cp.setSaldo(2000)
+>>> cp.getSaldo()
+2000
+>>> cp.imprimeExtrato()
+Quantidade de saldo disponivel: 2000.000000
+>>> 

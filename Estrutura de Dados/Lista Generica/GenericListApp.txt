@@ -1,0 +1,24 @@
+
+public class GenericListApp {
+
+	public static void main(String[] args) {
+//		GenericLinkedList<Integer> myList = new GenericLinkedList<Integer> ();
+//
+//		for ( int i = 0; i < 10; i++ )
+//			myList.insert ( i );
+//		
+
+		GenericLinkedList<String> myList = new GenericLinkedList<String> ();
+		myList.insert( "José da Silva" );
+		myList.insert( "João de Deus" );
+		myList.insert( "Mariazinha" );
+		myList.insert( "Joãozinho" );
+
+		try {
+			myList.show ();
+		}
+		catch ( EmptyListException e ) {
+			System.out.println ( e.getMessage () );
+		}
+	}
+}

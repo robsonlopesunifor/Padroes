@@ -1,0 +1,15 @@
+// temos dois tipos de problemas 
+	//'Error' que e codigo escrito errado (sintaxi) e 
+	// Exception que e os erro que acontece durante 
+// As exeçoes das versoes 3.3+ e diferente 3.3- 
+// Tenha cuidado pra não colocar exeção desnecessaria 
+
+
+import zipfile
+
+try:
+    banco_zip = zipfile.ZipFile("saida.zip")
+    banco_zip.extractall(path="banco")
+    banco_zip.close()
+except FileNotFoundError:
+    print("Arquivo inexistente")

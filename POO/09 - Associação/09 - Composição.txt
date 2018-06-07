@@ -1,0 +1,18 @@
+public class Roda
+{
+    	int aro;
+}
+
+public class Motor
+{
+    	int cavalos;
+}
+
+public class Reuniao
+{
+	Motor modelo;
+	Roda roda1;
+	Roda roda2;
+	Roda roda3;
+	Roda roda4;
+}

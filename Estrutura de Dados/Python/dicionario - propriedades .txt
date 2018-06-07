@@ -1,0 +1,25 @@
+>>> dicionario = {'Lambda':lambda x:x + 1}
+
+>>> dicionario = {'Lambda':lambda x:x + 1}
+>>> dicionario['Lambda'](3)
+4
+
+Player = {"Nome":'Player',
+          'Forca':20,
+          'Defesa':20,
+          'Ataque':{'Espadada':{'ataque':Funcao_espadada,'SP':0}},
+                    'Flexada':{'ataque':Funcao_flexada,'SP':0}} 
+
+Player['Ataque']['Espadada']['ataque'](player,inimigo)
+
+>>> dicionario = {'Nome':'Pedro','Telefone':123456,'celular':7890,'Email':'robson@email.com'}
+>>> dicionario.get('Nomw',0) # retorna o valor da chave Nome caso não ache retorne 0
+>>> dicionario.items() # retorna uma lista de dupla
+>>> dicionario2 = dicionario.copy() # faz uma copia
+>>> dicionario.pop('Nome') # 'Pedro'
+>>> dicionario.popitem() # elimina o primeiro que aparecer
+>>> dicionario2.clear() # limpa o dicionario
+>>> dicionario.setdefault('Nome','Robson') # 
+
+
+

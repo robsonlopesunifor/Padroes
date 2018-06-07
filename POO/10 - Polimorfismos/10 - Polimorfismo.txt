@@ -1,0 +1,80 @@
+
+_____________________________________________________________________
+	Polimorfismo Dinâmico ou Sobreposição (Sobrescrita)
+
+	package Sobreposicao;
+
+	class Forma
+	{	  	  
+		double base;
+		double altura;
+
+		public double calcularArea(double base, double altura) 
+		{
+			this.base  = base;
+			this.altura = altura;
+		
+			return this.base * this.altura;
+		}
+	}
+____________________________________________________________________
+
+	package Sobreposicao;
+
+	class Triangulo extends Forma
+	{	  	  	  
+		@Override
+		public double calcularArea(double base, double altura) 
+		{
+			this.base  = base;
+			this.altura = altura;
+		
+			return (this.base * this.altura)/2;
+		}
+	}
+_____________________________________________________________________
+
+	class Circulo extends Forma
+	{	  	  	  
+		@Override
+		public double calcularArea(double raio) 
+		{
+			this.raio  = raio;
+				
+			return pi*(this.raio)^2
+		}
+	}
+_____________________________________________________________________
+
+	Polimorfismo Estático ou Sobrecarga
+
+	public class TV 
+	{
+	int canal;
+	int volume;
+	boolean ligada;
+	int tamanho;
+ 
+		void ligar() 
+		{
+			this.ligar(3, 25, true);
+		}
+ 
+		void ligar(boolean ligada) 
+		{
+			this.ligar(3, 25, ligada);
+		}
+ 
+		void ligar(int canal, int volume) 
+		{
+			this.ligar(canal, volume, true);
+		}
+
+		void ligar(int canal, int volume, boolean ligada) 
+		{
+			this.canal = canal;
+			this.volume = volume;
+			this.ligada = ligada;
+		}
+	}
+

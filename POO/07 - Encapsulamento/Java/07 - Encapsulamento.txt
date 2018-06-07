@@ -1,0 +1,23 @@
+____________________________________________________________________
+Encapsulamento
+
+package Polimorfismo;
+
+public class Encapsulamento 
+{
+	private int atrbutoPrivado;
+	protected int atriutoProtected;
+	public int atributoPublico;
+	
+	public void setAtrbutoPrivado(int valor)
+	{
+		this.atrbutoPrivado = valor;
+	}
+	
+	public int  getAtrbutoPrivado()
+	{
+		return this.atrbutoPrivado;
+	}
+}
+________________________________________________________________________
+

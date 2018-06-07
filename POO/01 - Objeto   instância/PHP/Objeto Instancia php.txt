@@ -1,0 +1,28 @@
+Start.php_________________________________________________________
+
+<?php
+
+require_once '../classes/Cachorro.php';
+
+$Cachorro = new Cachorro();
+
+?>
+
+Cachorro.php____________________________________________________
+
+<?php 
+
+class Cachorro{ 
+    public $nome = 'Betovem'; 
+    
+    function Cachorro() 
+    { 
+        echo $this->nome; 
+    } 
+} 
+
+?> 
+
+________________________________________________________________
+
+

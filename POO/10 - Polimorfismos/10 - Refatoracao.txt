@@ -1,0 +1,48 @@
+class TipoEmpregado {
+
+	public int quantiaAPagar() {
+		switch(lerTipo()) {
+			case TipoDeEmpregado.ENGENHEIRO:
+				return _salarioMensal;
+			case TipoDeEmpregado.VENDEDOR:
+				return _salarioMensal + _comissao;
+			case TipoDeEmpregado.GERENTE:
+				return _salarioMensal + _bonus;
+			default:
+				throw new RuntimeException("tipo incorreto de empregado");
+		}
+	}
+}
+
+_______________________________________________________________________
+
+//Essa classe que vai chamar o TipoDeEmpregado dependendo do tipo passado
+class Empregado {
+	int quantiaAPagar(TipoDeEmpregado lerTipo) {
+		return lerTipo.quantiaAPagar(this);
+	}
+}
+
+class TipoDeEmpregado {
+
+	abstract int quantiaAPagar(Empregado emp);
+}
+
+class Engenheiro extends TipoDeEmpregado {
+	int quantiaAPagar(Empregado emp) {
+		return emp.lerSalarioMensal();
+	}
+}
+
+class Vendedor extends TipoDeEmpregado {
+	int quantiaAPagar(Empregado emp) {
+		return emp.lerSalarioMensal() + emp.lerComissao();
+	}
+}
+
+class Gerente extends TipoDeEmpregado {
+	int quantiaAPagar(Empregado emp) {
+		return emp.lerSalarioMensal() + emp.lerBonus();
+	}
+}
+

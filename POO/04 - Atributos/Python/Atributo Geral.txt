@@ -1,0 +1,20 @@
+// E possivel modificar os atributos estaticos de uma classe e isso refletir em todos os objetos 
+
+>>> class Conta:
+	total = 10000
+
+	def getSaldo(self):
+		return self.total
+	def setSaldo(self,saldo):
+		self.total = saldo
+
+	
+>>> ct = Conta()
+>>> ct.getSaldo()
+10000                     // valor do atributo total do objeto ct
+>>> Conta.total = 20000   // modificando o valor do atributo total da classe  
+>>> ct.getSaldo()	  // valor do atributo total do objeto ct foi modificado
+20000
+>>> ct.setSaldo(50)       // valor do atributo total do objeto ct
+>>> Conta.getSaldo(ct)    // E possivel acessar os metodos do objeto atraves da classe
+50

@@ -1,0 +1,29 @@
+import threading
+
+
+# o modulo threading trabalha como objeto
+# Ele precisa ser herdado 
+class MinhaThread(threading.Thread):  
+    def __init__(self, meuId, cont, mutex): # metodo construtor e obrigatorio 
+        self.meuId = meuId
+        self.cont = cont
+        self.mutex = mutex
+        threading.Thread.__init__(self) # inicia o metodo construtor do modulo threading
+    def run(self):  #   É aqui que voce coloca seu codigo 
+        for i in range(self.cont):
+            with self.mutex: # trava o escalonador 
+                print('[%s] => %s' %(self.meuId,i))
+
+stdoutmutex = threading.Lock() # cria um mutex 
+threads = [] # lista de thread
+
+for i in range(10):  # ira criar 10 thread 
+    thread = MinhaThread(i, 100, stdoutmutex) # cria a thread com seus parametros 
+    thread.start() # inicia a thread e executa o metodo Run
+    threads.append(thread) # adiciona a thread a lista 
+
+for thread in threads:
+    thread.join() # finaliza a thread
+    print('A thread terminor. %s' %(thread.meuId))
+
+print('Saindo da Thread principal.')

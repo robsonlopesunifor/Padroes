@@ -1,0 +1,13 @@
+minha_lista = ['Gui','Joao']
+
+
+minha_tupla = ('Gui','Joao')
+# so pode ser lido 
+
+meu_dicionario = {'nome':'Guilherme','idade':22}
+# Busca instatanea 
+
+meu_conjunto = {'Gui','Joao'}
+# nao e ordenado
+# nao pode repetir.
+# Busca é bem mais rapida 

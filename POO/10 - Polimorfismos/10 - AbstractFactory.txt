@@ -1,0 +1,58 @@
+
+
+__________________________________________________________________
+interface GUIFactory
+	public Menu createMenu();
+}
+
+
+class WinFactory implements GUIFactory {
+
+	public Menu createMenu() {
+		return new WinMenu();
+	}
+}
+
+class LinuxFactory implements GUIFactory {
+	public Menu createMenu() {
+		return new LinuxMenu();
+	}
+}
+___________________________________________________________________
+interface Menu {
+	public void paint();
+}
+
+class WinMenu implements Menu {
+	public void paint() {
+		System.out.println("Eu sou um WinMenu");
+	}
+}
+
+class LinuxMenu implements Menu {
+	public void paint() {
+		System.out.println("Eu sou um LinuxMenu");
+	}
+}
+____________________________________________________________________
+
+
+class Aplicacao {
+	public Aplicacao(GUIFactory factory) {
+		Menu menu = factory.createMenu();
+		menu.paint();
+	}
+}
+____________________________________________________________________
+class Principal {
+	public static void main(String args[]) {
+		chamar Application();
+		//De preferencia leia de algum lugar e coloque a opção na variável
+		int tipoDeMenu = 0;
+		if (tipoDeMenu == 0)
+			new Aplicacao(new WinFactory());
+		else
+			new Aplicacao(new LinuxFactory());
+	}
+}
+______________________________________________________________________

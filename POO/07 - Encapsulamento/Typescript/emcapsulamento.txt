@@ -1,0 +1,24 @@
+
+// classes e interface
+
+class NomeDaClasse{
+
+  public atributoNumerico: number
+  private atributoString: string // tambem vai no parametro
+
+
+  constructor (){}
+
+  public metodo_publico(){
+    console.log(`Imprimir texto ${this.atributoString}`)
+  }
+
+  private metodo_privado(){
+    console.log(`Imetodo privado`)
+  }
+
+}
+
+let ship = new NomeDaClasse()  //instacia
+ship.atributoNumerico
+ship.metodo_publico()

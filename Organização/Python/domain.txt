@@ -1,0 +1,15 @@
+import decimal
+
+class Column:
+    pass
+
+class PrimaryKey(Column):
+    pass
+
+class Relationship:
+    pass
+
+class DataTable:
+    pass
+
+

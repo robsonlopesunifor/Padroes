@@ -1,0 +1,13 @@
+// da forma que foi estruturado so e possivel acessa os metos atraves da classe
+
+>>> class Conta:
+	total = 10000
+
+	def getSaldo():   // sem o se
+		return Conta.total
+	def setSaldo(saldo):
+		Conta.total = saldo
+
+		
+>>> Conta.getSaldo()	  
+10000
